@@ -23,6 +23,7 @@ import image3 from "../../assets/67fdfbe10a64617625608052_scaled_cover.jpg";
 import { enrollmentPath } from "../../utils/routes";
 import { Stack, Box, Typography, Container } from "@mui/material";
 import MentorSection from "../../widgets/MentorInto/MentorSction";
+import { useNavigate } from "react-router-dom";
 
 // ====================== Data ======================
 interface ButtonProps {
@@ -155,8 +156,10 @@ const testimonials = [
 
 // ====================== Component ======================
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleEnrollClick = () => {
-    window.location.href = enrollmentPath;
+    navigate(enrollmentPath);
   };
 
   useEffect(() => {
