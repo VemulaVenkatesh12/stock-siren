@@ -44,7 +44,7 @@ const StockMarketBackground: React.FC = () => {
         this.height = Math.random() * 60 + 40;
         this.wickHeight = this.height + Math.random() * 30;
         this.isGreen = Math.random() > 0.5;
-        this.speed = Math.random() * 0.5 + 0.3;
+        this.speed = (Math.random() * 0.5 + 0.3) * 6;
         this.opacity = Math.random() * 0.4 + 0.2;
       }
 
@@ -112,7 +112,7 @@ const StockMarketBackground: React.FC = () => {
         this.y = Math.random() * canvas.height;
         this.amplitude = Math.random() * 40 + 20;
         this.frequency = Math.random() * 0.02 + 0.01;
-        this.speed = Math.random() * 0.8 + 0.4;
+        this.speed = (Math.random() * 0.8 + 0.4) * 6;
         this.offset = 0;
         this.opacity = Math.random() * 0.25 + 0.15;
         this.isUptrend = Math.random() > 0.5;
@@ -192,7 +192,7 @@ const StockMarketBackground: React.FC = () => {
         this.text = symbols[Math.floor(Math.random() * symbols.length)];
         this.x = Math.random() * canvas.width;
         this.y = canvas.height + 30;
-        this.speed = Math.random() * 0.4 + 0.2;
+        this.speed = (Math.random() * 0.4 + 0.2) * 6;
         this.opacity = Math.random() * 0.3 + 0.1;
         this.change = (Math.random() - 0.5) * 10;
         this.size = Math.random() * 8 + 12;

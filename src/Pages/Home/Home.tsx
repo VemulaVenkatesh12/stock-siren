@@ -192,11 +192,12 @@ const Home: React.FC = () => {
 
       <Box component="main" className="home__main">
         {/* Hero Section */}
-        <Box className="home__animation">
-          <StockMarketBackground />
-        </Box>
 
         <Box component="section" id="home" className="home__hero">
+          <Box className="home__animation">
+            <StockMarketBackground />
+          </Box>
+
           <Container maxWidth="lg" className="home__hero-content">
             <Stack spacing={3} alignItems="center">
               <Typography variant="h3" className="home__title">
@@ -277,7 +278,7 @@ const Home: React.FC = () => {
               ))}
             </Box>
           </Container>
-        </Box> 
+        </Box>
 
         <MentorSection />
 
@@ -301,7 +302,7 @@ const Home: React.FC = () => {
                 need to succeed.
               </Typography>
             </Stack>
-            <Box >
+            <Box>
               <CoursesSection courses={courses} />
             </Box>
           </Container>
