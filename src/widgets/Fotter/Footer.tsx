@@ -8,59 +8,33 @@ import {
   FaYoutube,
   FaXTwitter,
 } from "react-icons/fa6";
+import "./Footer.scss";
 
 // Forwarding the ref to the Box element in Footer
 const Footer = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >((props, ref) => (
-  <Box
-    ref={ref}
-    sx={{
-      background: "#16171d",
-      color: "#fff",
-      borderRadius: "8px",
-      px: 5,
-      wordSpacing: "2px",
-      lineHeight: 1.6,
-      border: "3px solid rgba(255, 255, 255, 0.1)", // soft border
-      boxShadow:
-        "0 2px 10px rgba(244, 239, 239, 1), 0 4px 20px rgba(245, 224, 224, 0.86)",
-    }}
-    {...props}
-  >
-    <Row className="py-4">
-      {/* === Company Info === */}
-      <Col md={5} sm={6} xs={12}>
-        <Typography
-          variant="h3"
-          sx={{
-            color: "#72ff89",
-            fontWeight: "bold",
-            mb: 1,
-            letterSpacing: "1px",
-          }}
-        >
+  <Box ref={ref} className="footer" {...props}>
+    <Row className="py-4 g-3">
+      {/* Company Info */}
+      <Col xs={12} md={3} lg={6} className="company-info">
+        <Typography variant="h3" className="company-title">
           STOCK SIREN
         </Typography>
-        <Typography variant="body2" sx={{ mb: 1, lineHeight: 1.7 }}>
+        <Typography variant="body2" className="company-description">
           Welcome to India's largest SEBI registered trading & investing
           platform. We offer education, advisory & research services.
         </Typography>
-        <Box
-          sx={{
-            background: "#25272e",
-            p: 1,
-            borderRadius: "8px",
-            mt: 2,
-          }}
-        >
-          <Typography variant="subtitle2" sx={{ fontWeight: "bold" }}>
+
+        <Box className="badge-box">
+          <Typography variant="subtitle2" className="badge-title">
             SEBI Registered Research Analyst
           </Typography>
           <Typography variant="body2">XXXXXXXXXXXXXXXXXXXX</Typography>
         </Box>
-        <Box sx={{ mt: 2, background: "#25272e", borderRadius: "8px", p: 2 }}>
+
+        <Box className="info-box">
           {[
             ["Company Name:", "Stock Siren Technologies Private Limited"],
             ["GSTIN:", "XXXXXXXXXXXXXXX"],
@@ -70,30 +44,16 @@ const Footer = React.forwardRef<
             ["Contact Number:", "+91-9874561320"],
             ["Email:", "sachinjadhav@stocksiren.in"],
           ].map(([label, value]) => (
-            <Typography
-              key={label}
-              variant="subtitle2"
-              sx={{ mb: 0.8, lineHeight: 1.7, wordSpacing: "3px" }}
-            >
+            <Typography key={label} variant="subtitle2" className="info-item">
               <b>{label}</b> {value}
             </Typography>
           ))}
         </Box>
       </Col>
 
-      {/* === Quick Links === */}
-      <Col md={2} sm={6} xs={12}>
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#ffdd57",
-            mb: 1.5,
-            fontWeight: 600,
-            letterSpacing: "0.5px",
-          }}
-        >
-          Quick Links
-        </Typography>
+      {/* Quick Links */}
+      <Col xs={12} md={3} lg={2} className="quick-links">
+        <Typography variant="h6">Quick Links</Typography>
         {[
           "About Us",
           "Membership",
@@ -104,35 +64,15 @@ const Footer = React.forwardRef<
           "Complaints",
           "SEBI Audit Report",
         ].map((item) => (
-          <Typography
-            key={item}
-            sx={{
-              color: "#bbb",
-              mb: 0.8,
-              cursor: "pointer",
-              transition: "color 0.3s ease",
-              wordSpacing: "4px",
-              "&:hover": { color: "#fff" },
-            }}
-          >
+          <Typography key={item} className="link-item">
             {item}
           </Typography>
         ))}
       </Col>
 
-      {/* === Company Policies === */}
-      <Col md={2} sm={6} xs={12}>
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#ffdd57",
-            mb: 1.5,
-            fontWeight: 600,
-            letterSpacing: "0.5px",
-          }}
-        >
-          Company
-        </Typography>
+      {/* Company Policies */}
+      <Col xs={12} md={3} lg={2} className="company-policies">
+        <Typography variant="h6">Company</Typography>
         {[
           "Disclaimer",
           "Disclosure",
@@ -143,36 +83,15 @@ const Footer = React.forwardRef<
           "Refund Policy",
           "Careers",
         ].map((item) => (
-          <Typography
-            key={item}
-            sx={{
-              color: "#bbb",
-              mb: 0.8,
-              cursor: "pointer",
-              transition: "color 0.3s ease",
-              wordSpacing: "4px",
-              "&:hover": { color: "#fff" },
-            }}
-          >
+          <Typography key={item} className="link-item">
             {item}
           </Typography>
         ))}
       </Col>
 
-      {/* === Contact Info === */}
-      <Col md={2} sm={6} xs={12}>
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#ffdd57",
-            mb: 1.5,
-            fontWeight: 600,
-            letterSpacing: "0.5px",
-          }}
-        >
-          Contact Us
-        </Typography>
-
+      {/* Contact Info */}
+      <Col xs={12} md={3} lg={2} className="contact-info">
+        <Typography variant="h6">Contact Us</Typography>
         {[
           {
             icon: <Phone fontSize="small" />,
@@ -186,16 +105,7 @@ const Footer = React.forwardRef<
           { icon: <WhatsApp fontSize="small" />, text: "+91-9632587410" },
           { icon: <Email fontSize="small" />, text: "help@stocksiren.in" },
         ].map(({ icon, text }, i) => (
-          <Box
-            key={i}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              mb: 1,
-              span: { wordSpacing: "3px" },
-            }}
-          >
+          <Box key={i} className="contact-item">
             {icon} <span>{text}</span>
           </Box>
         ))}
@@ -204,33 +114,23 @@ const Footer = React.forwardRef<
 
     <Divider sx={{ my: 3, borderColor: "#333" }} />
 
-    {/* === Bottom Footer === */}
-    <Row className="align-items-center px-5">
-      <Col md={8}>
-        <Typography
-          sx={{ fontSize: "15px", color: "#aaa", wordSpacing: "2px" }}
-        >
+    <Row className="align-items-center px-5 bottom-footer">
+      <Col xs={12} md={8}>
+        <Typography>
           ©2025 Stock Siren Technologies Private Limited. All rights reserved.
         </Typography>
       </Col>
-
-      <Col
-        md={4}
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-        }}
-      >
-        <IconButton sx={{ color: "#fff" }}>
+      <Col xs={12} md={4} className="social-icons">
+        <IconButton className="icon-btn">
           <FaFacebookF />
         </IconButton>
-        <IconButton sx={{ color: "#fff" }}>
+        <IconButton className="icon-btn">
           <FaLinkedinIn />
         </IconButton>
-        <IconButton sx={{ color: "#fff" }}>
+        <IconButton className="icon-btn">
           <FaYoutube />
         </IconButton>
-        <IconButton sx={{ color: "#fff" }}>
+        <IconButton className="icon-btn">
           <FaXTwitter />
         </IconButton>
       </Col>

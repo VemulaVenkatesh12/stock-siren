@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./Home.scss";
-import Header from "../../widgets/Header/Header";
 import Button from "../../widgets/Button/Button";
 import Card from "../../widgets/Card/Card";
 import StockMarketBackground from "../../utils/StockMarketBackground";
@@ -24,6 +23,7 @@ import { enrollmentPath } from "../../utils/routes";
 import { Stack, Box, Typography, Container } from "@mui/material";
 import MentorSection from "../../widgets/MentorInto/MentorSction";
 import { useNavigate } from "react-router-dom";
+import HeaderMobile from "../../widgets/Header/Header";
 
 // ====================== Data ======================
 interface ButtonProps {
@@ -188,11 +188,9 @@ const Home: React.FC = () => {
 
   return (
     <Box className="hide-scrollbar home">
-      <Header />
+      <HeaderMobile />
 
       <Box component="main" className="home__main">
-        {/* Hero Section */}
-
         <Box component="section" id="home" className="home__hero">
           <Box className="home__animation">
             <StockMarketBackground />
@@ -249,11 +247,7 @@ const Home: React.FC = () => {
                 everyone, from complete beginners to seasoned investors.
               </Typography>
             </Stack>
-            <Box className="home__cards-grid">
-              {aboutCards.map((card, idx) => (
-                <Card key={idx} variant="default" {...card} />
-              ))}
-            </Box>
+            <Card aboutCards={aboutCards} variant="default" />
           </Container>
         </Box>
       </Box>
@@ -261,7 +255,7 @@ const Home: React.FC = () => {
       <Box component="main" className="home__main">
         {/* Why Choose Us Section */}
         <Box component="section" className="home__section animate-on-scroll">
-          <Container maxWidth="lg">
+          <Container>
             <Stack
               spacing={2}
               alignItems="center"
@@ -272,11 +266,7 @@ const Home: React.FC = () => {
                 We are committed to your success. Here's what sets us apart.
               </Typography>
             </Stack>
-            <Box className="home__grid-6">
-              {whyChooseUsCards.map((card, idx) => (
-                <Card key={idx} variant="default" {...card} />
-              ))}
-            </Box>
+            <Card aboutCards={whyChooseUsCards} />
           </Container>
         </Box>
 
@@ -289,7 +279,6 @@ const Home: React.FC = () => {
           className="home__section animate-on-scroll"
           sx={{ position: "relative" }}
         >
-          {/* <CoursesBackgroundAnimation /> */}
           <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
             <Stack
               spacing={2}
@@ -322,11 +311,7 @@ const Home: React.FC = () => {
                 Stock Siren.
               </Typography>
             </Stack>
-            <Box className="home__testimonials">
-              {testimonials.map((testi, idx) => (
-                <Card key={idx} variant="testimonial" {...testi} />
-              ))}
-            </Box>
+            <Card aboutCards={testimonials} variant="testimonial" />
           </Container>
         </Box>
       </Box>

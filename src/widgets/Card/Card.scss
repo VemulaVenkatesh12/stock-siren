@@ -9,13 +9,19 @@
   gap: 1rem;
   align-items: center;
   text-align: center;
-  color: var(--text-primary); // <--- SOLUTION
+  color: var(--text-primary);
+  min-height: 300px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
 
   .card__title {
     color: var(--text-primary);
   }
+
   .card__description {
     color: var(--text-secondary);
+    flex-grow: 1;
   }
 
   &--testimonial {
@@ -26,6 +32,8 @@
     padding: 1.5rem;
     text-align: left;
     color: white;
+    min-height: 360px;
+    width: 100%;
 
     &:hover {
       transform: translateY(-5px);

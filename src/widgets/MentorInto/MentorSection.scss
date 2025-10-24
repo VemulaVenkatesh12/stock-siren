@@ -1,0 +1,99 @@
+/* MentorSection.scss */
+
+.mentor-section {
+  padding: 3rem 0;
+
+  .section-title {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+  }
+
+  .mentor-card {
+    border-radius: 1rem;
+    background: rgba(130, 132, 137, 0.95);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(247, 251, 247, 1);
+
+    @media (min-width: 768px) {
+      padding: 3rem 6rem;
+    }
+
+    .mentor-img-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 320px;
+      margin-bottom: 1rem;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
+
+      img {
+        border-radius: 24px;
+        max-width: 320px;
+        width: 100%;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 1);
+      }
+    }
+
+    .mentor-text-col {
+      .mentor-name {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .mentor-title {
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+      }
+
+      .mentor-description {
+        margin-bottom: 1.5rem;
+      }
+
+      .mentor-badge {
+        background: linear-gradient(90deg, #167c36 0%, #153e2c 100%);
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+
+        .badge-code {
+          background: var(--primary);
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          color: #fff;
+          font-size: 18px;
+        }
+
+        .badge-text {
+          .badge-label {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1;
+          }
+
+          .badge-reg {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 21px;
+          }
+        }
+      }
+    }
+  }
+}

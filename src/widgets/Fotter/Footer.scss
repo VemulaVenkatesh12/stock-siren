@@ -1,0 +1,119 @@
+/* Footer.scss */
+
+.footer {
+  background: #16171d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 3rem;
+  word-spacing: 2px;
+  line-height: 1.6;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(244, 239, 239, 1), 0 4px 20px rgba(245, 224, 224, 0.86);
+
+  .company-info {
+    margin-bottom: 1rem;
+
+    .company-title {
+      color: #72ff89;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    .company-description {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .badge-box {
+      background: #25272e;
+      padding: 0.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+
+      .badge-title {
+        font-weight: bold;
+      }
+    }
+
+    .info-box {
+      margin-top: 1rem;
+      background: #25272e;
+      border-radius: 8px;
+      padding: 1rem;
+
+      .info-item {
+        margin-bottom: 0.5rem;
+        line-height: 1.7;
+        word-spacing: 3px;
+
+        b {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .quick-links,
+  .company-policies {
+    margin-bottom: 1rem;
+
+    h6 {
+      color: #ffdd57;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .link-item {
+      color: #bbb;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      word-spacing: 4px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .contact-info {
+    margin-bottom: 1rem;
+
+    h6 {
+      color: #ffdd57;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.5rem;
+
+      span {
+        word-spacing: 3px;
+      }
+    }
+  }
+
+  .bottom-footer {
+    font-size: 15px;
+    color: #aaa;
+    word-spacing: 2px;
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      .icon-btn {
+        color: #fff;
+      }
+    }
+  }
+}

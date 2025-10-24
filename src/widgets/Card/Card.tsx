@@ -1,67 +1,50 @@
-import React from 'react';
-import './Card.scss';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "./Card.scss";
 
 interface CardProps {
-  title?: string;
-  description?: string;
-  icon?: React.ReactNode;
-  image?: string;
-  name?: string;
-  role?: string;
-  testimonial?: string;
-  children?: React.ReactNode;
-  variant?: 'default' | 'featured' | 'testimonial';
-  className?: string;
+  aboutCards?: Array<Record<string, any>>;
+  variant?: "default" | "featured" | "testimonial";
 }
 
 const Card: React.FC<CardProps> = ({
-  title,
-  description,
-  icon,
-  image,
-  name,
-  role,
-  testimonial,
-  children,
-  variant = 'default',
-  className = '',
+  aboutCards = [],
+  variant = "default",
 }) => {
   return (
-    <div className={`card card--${variant} ${className}`}>
-      {variant === 'testimonial' ? (
-        <>
-          <div className="card__testimonial-header">
-            {image && (
-              <img
-                src={image}
-                alt={name || title || 'testimonial avatar'}
-                className="card__avatar"
-              />
-            )}
-            <div>
-              <h4 className="card__name">{name || title}</h4>
-              <p className="card__role">{role}</p>
+    <Container className="py-4">
+      <Row className="g-4" xs={1} sm={1} md={2} lg={3} xl={3} xxl={3}>
+        {aboutCards.map((card, idx) => (
+          <Col key={idx} className="d-flex mb-4">
+            <div className={`card card--${variant} h-100 w-100`}>
+              {variant === "testimonial" ? (
+                <>
+                  {card.image && (
+                    <img
+                      src={card.image}
+                      alt={card.name || card.title || "testimonial avatar"}
+                      className="card__avatar"
+                    />
+                  )}
+                  <h4 className="card__name">{card.name || card.title}</h4>
+                  <p className="card__role">{card.role}</p>
+                  <p className="card__testimonial-text">
+                    "{card.testimonial || card.description}"
+                  </p>
+                </>
+              ) : (
+                <>
+                  {card.icon && <div className="card__icon">{card.icon}</div>}
+                  <h3 className="card__title">{card.title}</h3>
+                  <p className="card__description">{card.description}</p>
+                </>
+              )}
             </div>
-          </div>
-          <p className="card__testimonial-text">"{testimonial || description}"</p>
-          {children && <div className="card__content">{children}</div>}
-        </>
-      ) : variant === 'featured' ? (
-        <>
-          {icon && <div className="card__icon">{icon}</div>}
-          <h3 className="card__title">{title}</h3>
-          <p className="card__description">{description}</p>
-          {children && <div className="card__content">{children}</div>}
-        </>
-      ) : (
-        <>
-          {icon && <div className="card__icon">{icon}</div>}
-          <h3 className="card__title">{title}</h3>
-          <p className="card__description">{description}</p>
-          {children && <div className="card__content">{children}</div>}
-        </>
-      )}
-    </div>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 
