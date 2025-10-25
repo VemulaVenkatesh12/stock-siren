@@ -50,6 +50,13 @@ const HeaderMobile: React.FC = () => {
     navigate("/signup");
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "919972057006";
+    const message = "Hello! I would like to know more about your services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="header-mobile">
       <AppBar position="fixed" className="appbar">
@@ -81,10 +88,19 @@ const HeaderMobile: React.FC = () => {
 
           {/* Right Actions */}
           <Box className="right-actions">
-            <WhatsAppIcon className="whatsapp-icon" />
+            {/* ✅ WhatsApp Clickable */}
+            <IconButton
+              className="whatsapp-icon"
+              onClick={handleWhatsAppClick}
+              title="Chat on WhatsApp"
+            >
+              <WhatsAppIcon fontSize="large" sx={{ color: "#25D366" }} />
+            </IconButton>
+
             <Button className="signup-button" onClick={handleSignUpClick}>
               Sign Up
             </Button>
+
             <IconButton
               className="menu-icon"
               onClick={() => setOpenDrawer(true)}
